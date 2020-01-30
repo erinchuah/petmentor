@@ -10,9 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_01_30_092408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "duration"
+    t.float "price"
+    t.bigint "mentee_id"
+    t.bigint "mentor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentee_id"], name: "index_bookings_on_mentee_id"
+    t.index ["mentor_id"], name: "index_bookings_on_mentor_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.integer "rating"
+    t.text "review"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_feedbacks_on_booking_id"
+  end
+
+  create_table "mentees", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "contact_method"
+    t.string "contact_detail"
+    t.string "interest_field"
+    t.integer "experience_years"
+    t.text "description"
+    t.string "location"
+    t.string "linkedin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mentors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "contact_method"
+    t.string "contact_detail"
+    t.string "title"
+    t.string "company"
+    t.string "field"
+    t.text "description"
+    t.string "location"
+    t.string "linkedin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "bookings", "mentees"
+  add_foreign_key "bookings", "mentors"
+  add_foreign_key "feedbacks", "bookings"
 end
