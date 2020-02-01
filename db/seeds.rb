@@ -9,35 +9,70 @@
 require 'faker'
 require 'date'
 
-10.times do
-  Mentor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, title: Faker::Job.title, company: Faker::Company.name, field: Faker::Job.field, description: Faker::Lorem.paragraph, location: Faker::Address.country, linkedin: Faker::Internet.url)
-end
-
-Mentor.all.each do |mentor|
-  contact_method = ["WhatsApp", "WeChat", "Skype", "Messenger"].sample
-  contact_detail = Faker::Dessert.variety
-  photo = "http://loremflickr.com/320/240"
+#Seed 50 mentors
+50.times do
+  Mentor.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    contact_method: ["WhatsApp", "WeChat", "Skype", "Messenger"].sample,
+    contact_detail: Faker::Dessert.variety,
+    title: Faker::Job.title,
+    company: Faker::Company.name,
+    field: Faker::Job.field,
+    description: Faker::Lorem.paragraph,
+    location: Faker::Address.country,
+    linkedin: Faker::Internet.url,
+    photo: "https://loremflickr.com/320/240"
+    )
 end
 
 puts "#{Mentor.count} mentors have been seeded"
 
+#Seed 10 mentees
+10.times do
+  Mentee.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    contact_method: ["WhatsApp", "WeChat", "Skype", "Messenger"].sample,
+    contact_detail: Faker::Dessert.variety,
+    interest_field: Faker::Job.field,
+    experience_years: [*0..15].sample,
+    description: Faker::Lorem.paragraph,
+    location: Faker::Address.country,
+    linkedin: Faker::Internet.url,
+    photo: "https://loremflickr.com/320/240"
+    )
+end
 
+puts "#{Mentee.count} mentees have been seeded"
 
+#Seed 5 bookings
+from = 15.days.ago.to_f
+to = 60.days.from_now.to_f
 
-#   # every band has the same video link for now... unless we have time to seed more variety
-#   new_band = Band.new(name: bandname, photo: photoURL, location: city, price: randomcost, description: lorem, link: randomlinks, user: user, style: randomstyle, tag_list: randomtag1)
-#   new_band.tag_list.add(randomtag2)
-#   new_band.save
-#   if new_band.id%2 == 0
-#     new_band.tag_list.add(randomtag3)
-#     new_band.save
-#   end
-# end
+5.times do
+  Booking.create(
+    date: Time.at(rand*(to-from)+from),
+    duration: [15,30,45,60].sample,
+    price: [20,50,75,100,150,200].sample,
+    mentee_id: [*1..(Mentee.count)].sample,
+    mentor_id: [*1..(Mentor.count)].sample
+  )
+end
 
-# 20.times do
-#   Booking.create(user_id: User.all.sample.id, band_id: Band.all.sample.id, date: Date.today)
-# end
+puts "#{Booking.count} bookings have been seeded"
 
-# p "#{User.count} users have been seeded to database"
-# p "#{Band.count} bands have been seeded to database"
-# p "#{Booking.count} bookings have been seeded to database"
+#seed feedback
+bookfeed_id = 1
+until bookfeed_id == (Booking.count + 1)
+  Feedback.create(
+    booking_id: bookfeed_id,
+    rating: [*1..5].sample,
+    review: Faker::Lorem.paragraph
+  )
+  bookfeed_id += 1
+end
+
+puts "#{Feedback.count} feedback have been seeded"
