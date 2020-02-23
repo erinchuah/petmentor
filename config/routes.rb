@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :mentees, only: [:show, :create, :update, :destroy] do
+  resources :mentees, only: [:show, :new, :create, :update, :destroy] do
     resources :bookings do
       resources :feedback, only: [:show, :create]
     end

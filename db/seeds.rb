@@ -22,15 +22,16 @@ require 'date'
     field: Faker::Job.field,
     description: Faker::Lorem.paragraph,
     location: Faker::Address.country,
-    linkedin: Faker::Internet.url,
-    photo: "https://loremflickr.com/320/240"
+    linkedin: "www.linkedin.com/in/erinchuah/",
+    photo: "assets/images/headshot#{rand(1..8)}.jpg",
+    skills: ["product management", "management consulting", "web development", "business development", "marketing", "sales", "legal", "HR", "advertising", "growth hacking", "operations", "AI / ML"].sample(5)
     )
 end
 
 puts "#{Mentor.count} mentors have been seeded"
 
 #Seed 10 mentees
-10.times do
+30.times do
   Mentee.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -52,27 +53,29 @@ puts "#{Mentee.count} mentees have been seeded"
 from = 15.days.ago.to_f
 to = 60.days.from_now.to_f
 
-5.times do
+80.times do
   Booking.create(
     date: Time.at(rand*(to-from)+from),
     duration: [15,30,45,60].sample,
     price: [20,50,75,100,150,200].sample,
     mentee_id: [*1..(Mentee.count)].sample,
-    mentor_id: [*1..(Mentor.count)].sample
+    mentor_id: [*1..(Mentor.count)].sample,
+    rating: [*1..5].sample,
+    review: Faker::Lorem.paragraph
   )
 end
 
 puts "#{Booking.count} bookings have been seeded"
 
-#seed feedback
-bookfeed_id = 1
-until bookfeed_id == (Booking.count + 1)
-  Feedback.create(
-    booking_id: bookfeed_id,
-    rating: [*1..5].sample,
-    review: Faker::Lorem.paragraph
-  )
-  bookfeed_id += 1
-end
+# #seed feedback
+# bookfeed_id = 1
+# until bookfeed_id == (Booking.count + 1)
+#   Feedback.create(
+#     booking_id: bookfeed_id,
+#     rating: [*1..5].sample,
+#     review: Faker::Lorem.paragraph
+#   )
+#   bookfeed_id += 1
+# end
 
-puts "#{Feedback.count} feedback have been seeded"
+# puts "#{Feedback.count} feedback have been seeded"

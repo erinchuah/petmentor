@@ -1,0 +1,20 @@
+**font**
+h6 #2E2E2E
+p #6A6972
+
+white #fffff
+
+navbar active or hover #361CC1
+navbar not active #2E2E2E
+
+big header grey #686B6D
+big header blue #18476D
+sub header blue #7D8FAA
+
+**font shadow**
+header shadow #d3d3d3
+
+**background**
+navbar rgba(222, 221, 218, 0.5)
+mentor card rgba(24, 71, 109, 0.1)
+mentor card label rgba(24, 71, 109, 0.7)

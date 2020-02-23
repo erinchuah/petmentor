@@ -13,7 +13,7 @@
     CSS INDEX
     ===================
 
-    01.COMMON 
+    01.COMMON
     02.HEADER
     03.BRAND
     04.SERVICES
@@ -22,12 +22,12 @@
     07.TEAM
     08.TESTIMONIAL
     09.BLOG
-    10.SUBSCRIBE
+    10.search
     11.FOOTER
 
 -----------------------------------------------------------------------------------*/
 /*===========================
-     01.COMMON css 
+     01.COMMON css
 ===========================*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
 body {
@@ -116,6 +116,7 @@ p {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 300px rgba(211, 211, 211, 0.3);
   width: 100%;
   height: 100%; }
 
@@ -165,7 +166,7 @@ p {
   margin-bottom: 10px !important; }
 
 .section-title .title {
-  font-size: 38px;
+  /*font-size: 38px;*/
   font-weight: 700;
   line-height: 42px; }
   @media (max-width: 767px) {
@@ -189,7 +190,7 @@ p {
       font-size: 16px; } }
 
 .section-title .title {
-  font-size: 32px;
+  /*font-size: 32px;*/
   padding-top: 10px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .section-title .title {
@@ -489,7 +490,7 @@ p {
     transform: rotate(-130deg); } }
 
 /*===========================
-      02.HEADER css 
+      02.HEADER css
 ===========================*/
 /*===== NAVBAR =====*/
 .navbar-area {
@@ -502,12 +503,13 @@ p {
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s; }
+  transition: all 0.3s ease-out 0s;
+  margin-top: 2 0px;}
 
 .sticky {
   position: fixed;
   z-index: 99;
-  background-color: #fff;
+  background-color: rgba(222, 221, 218, 0.5);
   -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
@@ -604,6 +606,7 @@ p {
   .navbar-nav .nav-item a {
     font-size: 16px;
     font-weight: 400;
+    /*text-shadow: 1px 1px 1px #a9a9a9;*/
     color: #fff;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
@@ -759,11 +762,12 @@ p {
 /*===== HEADER HERO =====*/
 .header-hero {
   position: relative;
+  /*height: 100%;*/
   z-index: 5;
   background-position: bottom center; }
 
 #particles-1 {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -771,14 +775,16 @@ p {
   z-index: -1; }
 
 .header-hero-content {
-  padding-top: 180px; }
+  padding-top: 180px;
+  padding-bottom: 50px;}
   @media (max-width: 767px) {
     .header-hero-content {
       padding-top: 100px; } }
   .header-hero-content .header-sub-title {
     font-size: 38px;
     font-weight: 300;
-    color: #fff; }
+    text-shadow: 1px 1px 1px #d3d3d3;
+    color: #686B6D; }
     @media (max-width: 767px) {
       .header-hero-content .header-sub-title {
         font-size: 24px; } }
@@ -788,7 +794,8 @@ p {
   .header-hero-content .header-title {
     font-size: 38px;
     font-weight: 700;
-    color: #fff; }
+    text-shadow: 1px 1px 1px #d3d3d3;
+    color: #18476D; }
     @media (max-width: 767px) {
       .header-hero-content .header-title {
         font-size: 24px; } }
@@ -796,7 +803,8 @@ p {
       .header-hero-content .header-title {
         font-size: 30px; } }
   .header-hero-content .text {
-    color: #fff;
+    text-shadow: 1px 1px 0.5px #d3d3d3;
+    color: #7D8FAA;
     margin-top: 30px; }
   .header-hero-content .main-btn {
     margin-top: 40px; }
@@ -813,7 +821,7 @@ p {
       padding-top: 30px; } }
 
 /*===========================
-      03.BRAND css 
+      03.BRAND css
 ===========================*/
 @media (max-width: 767px) {
   .brand-logo {
@@ -846,7 +854,7 @@ p {
     opacity: 1; }
 
 /*===========================
-      04.SERVICES css 
+      04.SERVICES css
 ===========================*/
 .single-services {
   background-color: #fff;
@@ -858,7 +866,7 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  padding: 50px 30px;
+  padding: 30px 30px;
   border: 2px solid transparent;
   border-radius: 8px; }
   @media (max-width: 767px) {
@@ -939,7 +947,7 @@ p {
       transform: rotate(25deg); }
 
 /*===========================
-      05.ABOUT css 
+      05.ABOUT css
 ===========================*/
 .about-area {
   position: relative;
@@ -972,7 +980,7 @@ p {
       display: none; } }
 
 .about-content {
-  max-width: 480px; }
+  max-width: 680px; }
   .about-content .text {
     margin-top: 15px; }
   .about-content .main-btn {
@@ -988,7 +996,7 @@ p {
       background-position: right center; }
 
 /*===========================
-    06.VIDEO COUNTER css 
+    06.VIDEO COUNTER css
 ===========================*/
 .video-content {
   position: relative;
@@ -1120,18 +1128,42 @@ p {
           font-size: 16px; } }
 
 /*===========================
-       07.TEAM css 
+       07.TEAM css
 ===========================*/
 .single-team {
   -webkit-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   -moz-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   overflow: hidden;
-  border-radius: 10px; }
+  border-radius: 10px;
+  background-color: rgba(24, 71, 109, 0.1)}
   .single-team .team-image {
-    position: relative; }
+    position: relative;
+    /*Erin added*/
+    width: 100%;
+    height: 150px;}
     .single-team .team-image img {
-      width: 100%; }
+      width: 100%;
+      height: 190px;
+      object-fit: cover;}
+    .single-team .team-tag-left {
+      background-color: rgba(24, 71, 109, 0.7);
+      color: white;
+      border-style: solid;
+      border-radius: 5px;
+      border-width: 1px;
+      border-color: rgba(24, 71, 109, 0.7);
+      font-size: 12px;
+      font-weight: bold;
+      flex-grow: 1}
+    .single-team .team-tag-right {
+      border-style: solid;
+      border-radius: 5px;
+      border-width: 1px;
+      border-color: rgba(24, 71, 109, 0.7);
+      font-size: 12px;
+      /*font-weight: bold;*/
+      flex-grow: 1}
     .single-team .team-image .social {
       position: absolute;
       left: 0;
@@ -1169,25 +1201,25 @@ p {
             padding: 15px 13px;
             color: #fff; }
   .single-team .team-content {
-    padding: 30px; }
+    padding: 10px; }
     .single-team .team-content .holder-name a {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #2E2E2E; }
     .single-team .team-content .text {
-      margin-top: 5px; }
+      margin-top: 3px; }
   .single-team:hover .team-image .social ul::before {
     opacity: 1;
     visibility: visible; }
 
 /*===========================
-     08.TESTIMONIAL css 
+     08.TESTIMONIAL css
 ===========================*/
 .single-testimonial {
   background-color: #fff;
   -webkit-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
   -moz-box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
-  box-shadow: 0px 0px 30px 0px rgba(167, 167, 167, 0.16);
+  box-shadow: 0px 0px 80px 0px rgba(167, 167, 167, 0.16);
   overflow: hidden;
   border-radius: 10px;
   padding: 25px 30px 5px;
@@ -1225,7 +1257,9 @@ p {
         top: 17px;
         left: 17px;
         width: 80px;
-        height: 80px; }
+        height: 80px;
+        border-radius: 50px;
+      }
     .single-testimonial .testimonial-author .author-content .holder-name {
       font-size: 18px;
       font-weight: 700;
@@ -1266,7 +1300,7 @@ p {
       height: 15px; }
 
 /*===========================
-       09.BLOG  css 
+       09.BLOG  css
 ===========================*/
 .single-blog .blog-image img {
   border-radius: 10px;
@@ -1301,9 +1335,9 @@ p {
       margin-left: 5px; }
 
 /*===========================
-       10.SUBSCRIBE  css 
+       10.search  css
 ===========================*/
-.subscribe-area {
+.search-area {
   padding: 40px 50px 90px;
   -webkit-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
   -moz-box-shadow: 0px 0px 18px 0px rgba(50, 77, 215, 0.14);
@@ -1311,77 +1345,77 @@ p {
   border-radius: 10px;
   background-color: #fff; }
   @media (max-width: 767px) {
-    .subscribe-area {
+    .search-area {
       padding: 10px 30px 60px; } }
 
-.subscribe-content .subscribe-title {
+.search-content .search-title {
   font-size: 35px;
   font-weight: 700; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .subscribe-content .subscribe-title {
+    .search-content .search-title {
       font-size: 30px; } }
   @media (max-width: 767px) {
-    .subscribe-content .subscribe-title {
+    .search-content .search-title {
       font-size: 24px; } }
-  .subscribe-content .subscribe-title span {
+  .search-content .search-title span {
     font-weight: 400; }
 
-.subscribe-form {
+.search-form {
   position: relative; }
-  .subscribe-form input {
+  .search-form input {
     border: 2px solid #E1E1E1;
-    height: 65px;
+    height: 50px;
     padding: 0 30px;
     border-radius: 5px;
     width: 100%;
     color: #2E2E2E; }
-    .subscribe-form input::placeholder {
+    .search-form input::placeholder {
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input::-moz-placeholder {
+    .search-form input::-moz-placeholder {
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input::-moz-placeholder {
+    .search-form input::-moz-placeholder {
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input::-webkit-input-placeholder {
+    .search-form input::-webkit-input-placeholder {
       opacity: 1;
       color: #B9B9B9; }
-    .subscribe-form input:focus {
+    .search-form input:focus {
       border-color: #361CC1; }
-  .subscribe-form button {
+  .search-form button {
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 0;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 65px;
-    line-height: 65px;
+    height: 50px;
+    line-height: 50px;
     background: -webkit-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: -o-linear-gradient(left, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background: linear-gradient(to right, #fe8464 0%, #fe6e9a 50%, #fe8464 100%);
     background-size: 200%; }
     @media (max-width: 767px) {
-      .subscribe-form button {
+      .search-form button {
         position: relative;
         width: 100%;
         margin-top: 10px;
         border-radius: 5px; } }
     @media only screen and (min-width: 576px) and (max-width: 767px) {
-      .subscribe-form button {
+      .search-form button {
         position: absolute;
         width: auto;
         margin-top: 0;
         border-radius: 0;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px; } }
-    .subscribe-form button:hover {
+    .search-form button:hover {
       color: #fff;
       background-position: right center; }
 
 /*===========================
-       11.FOOTER  css 
+       11.FOOTER  css
 ===========================*/
 .footer-area {
   background-position: top center;
@@ -1409,7 +1443,10 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; }
+  z-index: -1;
+  /*Erin added*/
+  background-color: rgba(24, 71, 109, 0.7);
+  }
 
 .footer-widget {
   padding-top: 50px; }
@@ -1452,7 +1489,7 @@ p {
   .link-wrapper .link {
     padding-top: 20px; }
     .link-wrapper .link li {
-      margin-top: 20px; }
+      margin-top: 5px; }
       .link-wrapper .link li a {
         font-size: 16px;
         color: #fff;
@@ -1467,7 +1504,7 @@ p {
 .footer-contact .contact {
   padding-top: 20px; }
   .footer-contact .contact li {
-    margin-top: 20px;
+    margin-top: 5px;
     font-size: 16px;
     color: #fff; }
 
@@ -1516,3 +1553,73 @@ p {
   display: none; }
   .back-to-top:hover {
     color: #fff; }
+
+/*===== ERIN ADDED =====*/
+.filter-btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 25px;
+  font-size: 16px;
+  line-height: 32px;
+  border-radius: 2px;
+  border: 0;
+  color: #6A6972;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+/*  background: -webkit-linear-gradient(left, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
+  background: -o-linear-gradient(left, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
+  background: linear-gradient(to right, #33c8c1 0%, #119bd2 50%, #33c8c1 100%);
+  background-size: 200%;*/ }
+  .filter-btn:hover {
+    color: #fff;
+    background-position: right center;
+  }
+
+.mentor-intro {
+  background-color: rgba(24, 71, 109, 0.1);
+  border-radius: 10px;
+}
+
+.mentor-details {
+
+}
+
+.single-expert .team-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.skills-tag {
+  text-align: center;
+  /*flex-shrink: 0;*/
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgba(24, 71, 109, 0.7);
+  font-size: 12px;
+  font-style: italic;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.flex-container {
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.error-message {
+  margin: auto;
+}

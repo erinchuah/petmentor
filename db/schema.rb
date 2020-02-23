@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_023143) do
+ActiveRecord::Schema.define(version: 2020_02_09_014126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,17 +23,10 @@ ActiveRecord::Schema.define(version: 2020_02_01_023143) do
     t.bigint "mentor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["mentee_id"], name: "index_bookings_on_mentee_id"
-    t.index ["mentor_id"], name: "index_bookings_on_mentor_id"
-  end
-
-  create_table "feedbacks", force: :cascade do |t|
     t.integer "rating"
     t.text "review"
-    t.bigint "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_feedbacks_on_booking_id"
+    t.index ["mentee_id"], name: "index_bookings_on_mentee_id"
+    t.index ["mentor_id"], name: "index_bookings_on_mentor_id"
   end
 
   create_table "mentees", force: :cascade do |t|
@@ -67,9 +60,10 @@ ActiveRecord::Schema.define(version: 2020_02_01_023143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.float "avg_rating"
+    t.text "skills", default: [], array: true
   end
 
   add_foreign_key "bookings", "mentees"
   add_foreign_key "bookings", "mentors"
-  add_foreign_key "feedbacks", "bookings"
 end

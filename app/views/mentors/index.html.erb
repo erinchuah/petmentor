@@ -1,7 +1,102 @@
-<div class="container">
-  <h1>PetMentor</h1>
-  <% @mentors.each do |mentor| %>
-    <%=mentor.first_name%>
-  <% end %>
-</div>
-</body>
+<!doctype html>
+<html class="no-js" lang="en">
+<body>
+
+    <!--====== NAVBAR PART STARTS ======-->
+    <div class="navbar-area sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="../">
+                            <img src="../assets/images/logo.svg" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="page-scroll" href="#mentors">Experts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#bookings">Bookings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#help">Get help</a>
+                                </li>
+                            </ul>
+                        </div> <!-- navbar collapse -->
+                        <div class="navbar-btn d-none d-sm-inline-block">
+                            <a class="main-btn" data-scroll-nav="0" href="#signup">My profile</a>
+                        </div>
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- navbar area -->
+    <!--====== NAVBAR PART ENDS ======-->
+
+    <!--====== SEARCH PART STARTS ======-->
+    <div class="container">
+        <div class="row mt-120">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h3 class="title">Find an expert</h3>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="search-form">
+                        <form action="#">
+                            <input type="text" placeholder="e.g. management consulting">
+                            <button class="main-btn pl-50 pr-50">Search</button>
+                        </form>
+                    </div>
+                </div>
+             </div> <!-- row -->
+        </div> <!-- search area -->
+
+        <div class="mt-15">
+            <div class="d-flex justify-content-start">
+                <button class="filter-btn pl-50 pr-50 mr-10">Industry</button>
+                <button class="filter-btn pl-50 pr-50 mr-10">Geography</button>
+                <button class="filter-btn pl-50 pr-50 mr-10">Company</button>
+                <button class="filter-btn pl-50 pr-50">Title</button>
+            </div>
+        </div>
+    </div>
+    <!--====== SEARCH PART ENDS ======-->
+
+    <!--====== EXPERT (TEAM) PART START ======-->
+
+    <section id="team" class="team-area pt-30">
+        <div class="container">
+            <div class="row justify-content-center">
+                <% @mentors.each do |mentor| %>
+                    <div class="col-lg-3 col-md-7 col-sm-8">
+                        <div class="single-team text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="team-image">
+                                <img src="../<%=mentor.photo%>" alt="Team">
+                            </div>
+                            <div class="mt-50">
+                                <p class="team-tag-left mb-1"><%=mentor.field%></p>
+                                <p class="team-tag-right"><%=mentor.company%></p>
+                            </div>
+                            <div class="team-content">
+                                <h5 class="holder-name"><a href="../mentors/<%=mentor.id%>"><%=mentor.first_name%> <%=mentor.last_name%></a></h5>
+                                <p class="text"><%=mentor.title%></p>
+                                <!-- <p class="text"><%=mentor.location%></p> -->
+                            </div>
+                        </div> <!-- single team -->
+                    </div>
+                <% end %>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== EXPERT (TEAM) PART ENDS ======-->

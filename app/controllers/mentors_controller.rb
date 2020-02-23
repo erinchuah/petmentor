@@ -1,12 +1,13 @@
 class MentorsController < ApplicationController
-  # before_action :set_mentor, only: [:show]
+  before_action :set_mentor, only: [:show]
+
     def index
       @mentors = Mentor.all
     end
 
-    # def show
-
-    # end
+    def show
+      # @booking = Booking.new
+    end
 
     # def new
     #   @mentor = Mentor.new
@@ -33,13 +34,13 @@ class MentorsController < ApplicationController
   #   end
   # end
 
-#   private
+  private
 
-#   def set_mentor
-#     @mentor = Mentor.find(params[:id])
-#   end
+  def set_mentor
+    @mentor = Mentor.find(params[:id])
+  end
 
-#   def mentor_params
-#     params.require(:mentor).permit(:first_name, :last_name)
-#   end
+  # def mentor_params
+  #   params.require(:mentor).permit(:first_name, :last_name)
+  # end
 end
